@@ -3,20 +3,18 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import styles from '../styles/navigation.module.css';
 
 
 const Navigation = () => {
     const path = usePathname();
-    const [a, setA] = useState(0);
     console.log(path);
-    console.log('hi!')
     return (
-        <nav>
+        <nav className={styles.nav}>
             <ul>
-                <li><Link href="/">Home</Link>{path==="/" ? "!" : ""}</li>
-                <li><Link href="/about-us">About Us</Link>{path==="/about-us" ? "!" : ""}</li>
+                <li><Link href="/">Home</Link>{path==="/" ? "🔥" : ""}</li>
+                <li><Link href="/about-us">About Us</Link>{path==="/about-us" ? "🔥" : ""}</li>
             </ul>
-            <button onClick={() => {setA((prev) => prev + 1)}}>{a}</button>
         </nav>
     )
 }
