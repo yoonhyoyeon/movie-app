@@ -13,7 +13,7 @@ import { useRouter } from 'next/navigation';
     return (
         <div className={styles.movie}>
             <img onClick={onClickImg} src={poster_path} alt={title} />
-            <Link href={`/movies/${id}`}>{title}</Link>
+            <Link prefetch href={`/movies/${id}`}>{title}</Link>
         </div>
     )
  }
